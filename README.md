@@ -1,9 +1,10 @@
 # ApexDesk Tier-1 Support Agent
 
-A guided lab project: as an AI Engineer at **ApexDesk**, a fake B2B SaaS company that sells
+A guided lab project: you are the Lead AI Engineer at **ApexDesk**, a fake B2B SaaS company that sells
 workflow software to small businesses. Your mandate: build an AI Tier-1 Support Agent that reduces
 ticket load, using messy data, internal database lookups, and multi-step tasks.
 
+You build it in five steps, one script per step. Each step adds one production layer.
 
 ```
 [Step 1: Pydantic schema] -> [Step 2: SQLite memory] -> [Step 3: Guardrails]
@@ -18,6 +19,9 @@ cp .env.example .env        # then put your OpenAI key in .env
 python apexdesk_db.py       # creates customers.db with deliberately messy data
 ```
 
+No key yet? Steps 3 and 4 (offline part), the tests, and `demo_offline.py` all run without one.
+
+**How one request flows through all the layers:** see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## The five steps
 
@@ -58,7 +62,7 @@ python -m unittest discover -s tests -v           # 23 offline tests
 
 ## Proof for your write-up
 
-Every run appends to `logs/react_trace.jsonl`. A scripted example from `demo_offline.py`:
+Every run appends to `logs/react_trace.jsonl`. Use it as evidence. A scripted example from `demo_offline.py`:
 
 ```
 CUSTOMER: Hi! I can't access Custom Reports on my account.
@@ -70,6 +74,7 @@ CUSTOMER: Hi! I can't access Custom Reports on my account.
   step 6 | postflight  | allowed=True category=ok
 ```
 
+Portfolio write-up outline:
 
 1. **The business problem:** automating Tier-1 customer resolutions without risking wrong answers or leaks.
 2. **The architecture:** schema enforcement, SQLite state, pre/post-flight guardrails, validated tools, ReAct loop.
