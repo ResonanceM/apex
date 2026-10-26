@@ -1,5 +1,7 @@
 # ApexDesk Tier-1 Support Agent
 
+## Task statement
+
 A guided lab project: you are the Lead AI Engineer at **ApexDesk**, a fake B2B SaaS company that sells
 workflow software to small businesses. Your mandate: build an AI Tier-1 Support Agent that reduces
 ticket load, using messy data, internal database lookups, and multi-step tasks.
