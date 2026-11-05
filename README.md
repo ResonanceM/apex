@@ -62,9 +62,9 @@ python -m unittest discover -s tests -v           # 23 offline tests
   slipping past them on purpose. Tool authorization and the output audit still protect you.
 - **A hard `MAX_TURNS` cap** stops a runaway loop and escalates to a human.
 
-## Proof for your write-up
+## Proof for write-up
 
-Every run appends to `logs/react_trace.jsonl`. Use it as evidence. A scripted example from `demo_offline.py`:
+Every run appends to `logs/react_trace.jsonl`. A scripted example from `demo_offline.py`:
 
 ```
 CUSTOMER: Hi! I can't access Custom Reports on my account.
