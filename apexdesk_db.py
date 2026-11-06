@@ -9,7 +9,10 @@ import sqlite3
 from contextlib import contextmanager
 from pathlib import Path
 
-DB_PATH = Path(__file__).with_name("customers.db")
+import os
+
+# APEXDESK_DB lets the MCP server and the tests point at a different database file.
+DB_PATH = Path(os.environ.get("APEXDESK_DB") or Path(__file__).with_name("customers.db"))
 
 TIER_ORDER = ["basic", "pro", "enterprise"]
 _BASE = ["task_boards", "email_notifications", "csv_export"]
